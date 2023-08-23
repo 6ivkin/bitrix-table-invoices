@@ -24,7 +24,7 @@ class CProximaInvoicesList extends Complex
             $this->initRoute(
                 [
                     'proxima.invoices.component' => '',
-                    'burkov.games.edit' => 'edit',
+                    'proxima.invoices.sum' => 'edit',
                 ],
                 'proxima.invoices.component'
             );
@@ -125,26 +125,7 @@ class CProximaInvoicesList extends Complex
                                 'SUMMA' => $invoice->getSumma(),
                                 'DATE' => $invoice->getDate(),
                             ],
-                            'actions' => [
-                                [
-                                    'text' => 'Изменить',
-                                    'default' => true,
-                                    'onclick' => (new JsCode(
-                                        'BX.SidePanel.Instance.open(
-                                        "' . $this->getRoute()->getUrl('games.edit', ['ID' => $invoice->getId()]) . '", 
-                                        {
-                                            cacheable: false,
-                                            width: 600
-                                        }
-                                    );'
-                                    ))->getCode(),
-                                ],
-                                [
-                                    'text' => 'Удалить',
-                                    'default' => false,
-                                    'onclick' => (new JsCode('deleteGameItem('.$invoice->getId().', "' . $grid->getGridId() . '")'))->getCode(),
-                                ]
-                            ]
+                            'actions' => []
                         ]
                     );
                 }

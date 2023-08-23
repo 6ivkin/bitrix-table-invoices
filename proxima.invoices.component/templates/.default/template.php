@@ -37,7 +37,7 @@ $component = $this->getComponent();
         'color' => Color::PRIMARY,
         'click' => new JsCode(
             'BX.SidePanel.Instance.open(
-                "' . $component->getRoute()->getUrl('burkov.games.edit') . '",
+                "' . $component->getRoute()->getUrl('proxima.invoices.sum') . '",
                 {
                     cacheable: false,
                     width: 600
@@ -45,7 +45,7 @@ $component = $this->getComponent();
             );'
         ),
         'icon' => Icon::ADD,
-        'text' => 'Добавить игру',
+        'text' => 'Сумма',
     ]));
     ?>
     <?php

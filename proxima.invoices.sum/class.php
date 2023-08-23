@@ -7,12 +7,7 @@ use Proxima\Service\Component\Complex;
 use Proxima\Service\Component\GridHelper;
 use Bitrix\Main\Web\Uri;
 use Proxima\Service\Component\Simple;
-
-//use Proxima\Burkov\Model\GameTable;
-//use Proxima\Burkov\Model\CartridgeTable;
 use Proxima\Invoices\Module\Model\InvoicesTable;
-
-//use Proxima\Burkov\Game;
 
 if (!Loader::includeModule('proxima.invoices.module')) {
     throw new Exception('Ошибка подключения модуля proxima.invoices.module');
@@ -28,9 +23,9 @@ class CProximaBurkovGameEdit extends Complex
         try {
             $this->initRoute(
                 [
-                    'burkov.games.edit' => 'edit',
+                    'proxima.invoices.sum' => 'edit',
                 ],
-                'burkov.games.edit'
+                'proxima.invoices.sum'
             );
             $this->getRoute()->run();
 
